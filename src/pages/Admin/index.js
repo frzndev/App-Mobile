@@ -10,6 +10,14 @@ import styles from './styles';
 export default function Admin(){
     const navigation = useNavigation();
 
+    function navigateAdminReparacao(){
+        navigation.navigate('AdminReparacao');
+    }
+
+    function navigateAdminUtilizadores(){
+        navigation.navigate('AdminUtilizadores');
+    }
+
     function navigateMenu(){
         navigation.navigate('Menu');
     }
@@ -21,7 +29,19 @@ export default function Admin(){
 
             <Image source={logoImg} style={{ width: 250, height: 250 }}/>
 
-            
+            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 20}}>ADMIN</Text>
+
+            <TouchableOpacity style={styles.button} onPress={navigateAdminReparacao}>
+                <Text style={{ fontSize: 18, color: "#fff" }}>Listar Reparações</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button} onPress={navigateAdminUtilizadores}>
+                <Text style={{ fontSize: 18, color: "#fff" }}>Listar Utilizadores</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button} onPress={navigateMenu}>
+                <Text style={{ fontSize: 18, color: "#fff" }}>Voltar para o Menu</Text>
+            </TouchableOpacity>
 
             <Image source={logoIpb} style={{width: 300, height: 50, marginTop: 60}}/>
 

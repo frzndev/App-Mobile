@@ -8,19 +8,21 @@ import logoIpb from '../../assets/ipb.png';
 
 import styles from './styles';
 
-export default function Listar(){
+export default function AdminUtilizadores(){
     const navigation = useNavigation();
 
     function navigateMenu(){
-        navigation.navigate('Menu');
+        navigation.navigate('Admin');
     }
 
-    state = {
+    const state = {
 
-        headerData: ['Nome', 'Telemovel', 'Email', 'Morada', 'Descrição', 'Status'],
+        headerData: ['Nome', 'Telemovel', 'Email', 'Morada'],
 
         tableContents: [
-            ['Cristiano Santos', '93333', 'cristiano@gmail.com', 'Rua das Peras', 'Microondas não aquece', 'Em Analise']
+            ['Cristiano Santos', '93333', 'cristiano@gmail.com', 'Rua das Peras'],
+            ['Manuel Andrade', '91111', 'manuel@gmail.com', 'Rua das Maças'],
+            ['Rui Pinto', '96666', 'rui@gmail.com', 'Rua das Bananas']
         ] 
     
     };
@@ -40,7 +42,7 @@ export default function Listar(){
             </View>
 
             <TouchableOpacity style={styles.button} onPress={navigateMenu}>
-                <Text style={{ fontSize: 18, color: "#fff" }}>Voltar para o Menu</Text>
+                <Text style={{ fontSize: 18, color: "#fff" }}>Voltar</Text>
             </TouchableOpacity>
 
             <Image source={logoIpb} style={{width: 300, height: 50, marginTop: 40}}/>

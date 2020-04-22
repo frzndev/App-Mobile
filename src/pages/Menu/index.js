@@ -33,6 +33,8 @@ export default function Menu(){
 
             <Image source={logoImg} style={{ width: 250, height: 250 }}/>
 
+            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 20}}>MENU</Text>
+
             <TouchableOpacity style={styles.button} onPress={navigateReparacao}>
                 <Text style={{ fontSize: 18, color: "#fff" }}>Apresentar Reparação</Text>
             </TouchableOpacity>

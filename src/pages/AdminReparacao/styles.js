@@ -7,15 +7,14 @@ export default StyleSheet.create({
         paddingHorizontal: 24,
         paddingTop: Constants.statusBarHeight + 20,
         justifyContent: "center",
-        alignItems: "center",
         backgroundColor: "#2c3e50"
     },
 
     button: {
         backgroundColor: "#66194d",
-        width: 250, 
+        marginTop: 15,
+        width: 250,
         height: 40,
-        marginTop: 15,        
         borderRadius: 3,
         justifyContent: "center",
         alignItems: "center"

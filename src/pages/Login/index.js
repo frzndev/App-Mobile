@@ -31,7 +31,7 @@ export default function Login(){
                 <TextInput 
                     style={styles.input}
                     secureTextEntry={true}
-                    placeholder=" Digite sua Password"
+                    placeholder=" Digite sua Password:"
                 />
                 <TouchableOpacity style={styles.button} onPress={navigateMenu}>
                     <Text style={{ fontSize: 18, color: "#fff" }}>Entrar</Text>
