@@ -17,12 +17,12 @@ export default function AdminUtilizadores(){
 
     const state = {
 
-        headerData: ['Nome', 'Telemovel', 'Email', 'Morada'],
+        headerData: ['Username', 'Nome', 'Telemovel', 'Email', 'Morada'],
 
         tableContents: [
-            ['Cristiano Santos', '93333', 'cristiano@gmail.com', 'Rua das Peras'],
-            ['Manuel Andrade', '91111', 'manuel@gmail.com', 'Rua das Maças'],
-            ['Rui Pinto', '96666', 'rui@gmail.com', 'Rua das Bananas']
+            ['Cris', 'Cristiano Santos', '93333', 'cristiano@gmail.com', 'Rua das Peras'],
+            ['Manel', 'Manuel Andrade', '91111', 'manuel@gmail.com', 'Rua das Maças'],
+            ['Rui', 'Rui Pinto', '96666', 'rui@gmail.com', 'Rua das Bananas']
         ] 
     
     };

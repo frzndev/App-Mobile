@@ -14,10 +14,14 @@ export default function Login(){
         navigation.navigate('Menu');
     }
 
+    function navigateRegistar(){
+        navigation.navigate('Registar');
+    }
+
     return (
         <View style={styles.container}>
 
-            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 13, marginBottom: 50 }}>Centro de Reparação de Eletrodomésticos</Text>
+            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 13, marginBottom: 30 }}>Centro de Reparação de Eletrodomésticos</Text>
 
             <Image source={logoImg} style={{ width: 250, height: 250 }}/>
 
@@ -36,9 +40,14 @@ export default function Login(){
                 <TouchableOpacity style={styles.button} onPress={navigateMenu}>
                     <Text style={{ fontSize: 18, color: "#fff" }}>Entrar</Text>
                 </TouchableOpacity>
+
+                <TouchableOpacity style={styles.button} onPress={navigateRegistar}>
+                    <Text style={{ fontSize: 18, color: "#fff" }}>Registar</Text>
+                </TouchableOpacity>
+
             </View>
 
-            <Image source={logoIpb} style={{width: 300, height: 50, marginTop: 90}}/>
+            <Image source={logoIpb} style={{width: 300, height: 50, marginTop: 40}}/>
 
         </View>
     );
