@@ -15,7 +15,7 @@ export default function Listar(){
         navigation.navigate('Menu');
     }
 
-    state = {
+    const state = {
 
         headerData: ['Nome', 'Telemovel', 'Email', 'Morada', 'Descrição', 'Status'],
 
