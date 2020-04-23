@@ -46,7 +46,7 @@ export default function Reparacao(){
                     placeholder=" * Morada:"
                 />
                 <TextInput 
-                    style={{backgroundColor: "#fff", marginTop: 15, width: 250, height: 80, fontWeight: "bold", borderRadius: 3, fontSize: 15}}
+                    style={{backgroundColor: "#fff", marginTop: 15, width: 250, height: 80, fontWeight: "bold", borderRadius: 3, fontSize: 11}}
                     placeholder=" * Descrição do Equipamento (Marca / Avaria):"  
                 />
 
