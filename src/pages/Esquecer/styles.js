@@ -33,15 +33,8 @@ export default StyleSheet.create({
         backgroundColor: "#332003",
         width: 150,
         height: 40,
-        borderRadius: 3
-    },
-
-    button2: {
-        backgroundColor: "#673E01",
-        marginRight: 10,
-        width: 150,
-        height: 40,
-        borderRadius: 3
+        borderRadius: 3,
+        marginTop: 10
     }
 
 });

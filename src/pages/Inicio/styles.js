@@ -9,39 +9,26 @@ export default StyleSheet.create({
         justifyContent: 'center'
     },
 
-    back: {
-        marginTop: 40,
-        marginLeft: 20
-    },
-
     backgroundImage: {
         flex: 1,
         resizeMode: 'cover',
         justifyContent: 'center',
     },
 
-    input: {
-        backgroundColor: "#fff",
-        marginTop: 3,
-        width: 305,
-        height: 40,
-        fontWeight: "bold",
-        borderRadius: 3
-    },
-
     button1: {
         backgroundColor: "#332003",
-        width: 150,
+        marginTop: 15,
+        width: 200,
         height: 40,
         borderRadius: 3
     },
 
     button2: {
         backgroundColor: "#673E01",
-        marginRight: 10,
-        width: 150,
+        marginTop: 15,
+        width: 200,
         height: 40,
         borderRadius: 3
-    }
-
+    },
+    
 });
