@@ -12,27 +12,19 @@ import mensagem from '../../assets/mensagem.png';
 
 import styles from './styles';
 
-export default function Menu(){
+export default function AdminMenu(){
     const navigation = useNavigation();
 
-    function navigateLogin(){
-        navigation.navigate('Login');
-    }
-
-    function navigateMensagem(){
-        navigation.navigate('Mensagem');
-    }
-
-    function navigateRequisitar(){
-        navigation.navigate('Requisitar');
-    }
-
-    function navigateDevolucao(){
-        navigation.navigate('Devolucao');
+    function navigateMenu(){
+        navigation.navigate('Menu');
     }
 
     function navigateAdmin(){
         navigation.navigate('Admin');
+    }
+
+    function navigateMensagem(){
+        navigation.navigate('Mensagem');
     }
 
     return (
@@ -41,7 +33,7 @@ export default function Menu(){
         
         <View style={styles.back}>             
 
-                <TouchableOpacity onPress={navigateLogin}>
+                <TouchableOpacity onPress={navigateMenu}>
                     <Image source={back} style={{ width: 35, height: 30 }}/>
                 </TouchableOpacity>
 
@@ -64,37 +56,44 @@ export default function Menu(){
                 </View>
 
                 <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 20}}>
-                    <Text style={{ fontSize: 30, color: "#D63578", fontWeight: "bold", textAlign: 'center'}}>MENU</Text>
+                    <Text style={{ fontSize: 30, color: "#D63578", fontWeight: "bold", textAlign: 'center'}}>MENU ADMIN</Text>
                 </View>
 
                 <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 20}}>                    
-                    <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Requisitar Equipamento</Text>
-                    <TouchableOpacity style={styles.button} onPress={navigateRequisitar}>
-                        <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: 20}}/>
+                    <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Gerir Contas</Text>
+                    <TouchableOpacity style={styles.button} onPress={navigateMenu}>
+                        <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: 100}}/>
                     </TouchableOpacity>
                 </View>
             
                 <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>                    
-                    <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Devolver Equipamento</Text>
-                    <TouchableOpacity style={styles.button} onPress={navigateDevolucao}>
-                        <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: 30}}/>
+                    <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Gerir Atribuições</Text>
+                    <TouchableOpacity style={styles.button} onPress={navigateMenu}>
+                        <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: 65}}/>
                     </TouchableOpacity>
                 </View>
                 
                 <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>                    
-                    <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Login como Administrador</Text>
-                    <TouchableOpacity style={styles.button} onPress={navigateAdmin}>
-                        <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: -5}}/>
+                    <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Gerir Devoluções</Text>
+                    <TouchableOpacity style={styles.button} onPress={navigateMenu}>
+                        <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: 65}}/>
                     </TouchableOpacity>
                 </View>
 
-                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 200, marginLeft: -35}}>                    
+                <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>                    
+                    <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Gerir Equipamentos</Text>
+                    <TouchableOpacity style={styles.button} onPress={navigateMenu}>
+                        <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: 43}}/>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 100, marginLeft: -35}}>                    
                     
                     <TouchableOpacity style={styles.butoes}>
                         <Image source={settings} style={{width: 30, height: 30, marginRight: 15}}/>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button1} onPress={navigateLogin}>
+                    <TouchableOpacity style={styles.button1} onPress={navigateMenu}>
                         <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 12}}>Terminar Sessão</Text>
                     </TouchableOpacity>
 
