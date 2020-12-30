@@ -2,9 +2,9 @@ import React from 'react';
 import { ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import logoImg from '../../assets/logo.png';
-import logoIpb from '../../assets/ipb.png';
-import bgImg from '../../assets/bg.png';
+import logoImg from '../../../assets/img/logo.png';
+import logoIpb from '../../../assets/img/ipb.png';
+import bgImg from '../../../assets/img/bg.png';
 
 import styles from './styles';
 

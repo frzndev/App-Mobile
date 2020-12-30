@@ -2,14 +2,15 @@ import React from 'react';
 import { Alert, CheckBox, ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import logoImg from '../../assets/logo.png';
-import bgImg from '../../assets/bg.png';
-import back from '../../assets/back.png';
-import rectangle from '../../assets/Rectangle.png';
+import logoImg from '../../../assets/img/logo.png';
+import bgImg from '../../../assets/img/bg.png';
+import back from '../../../assets/img/back.png';
+import rectangle from '../../../assets/img/Rectangle.png';
+import calendar from '../../../assets/img/calendar.png';
 
 import styles from './styles';
 
-export default function Requisitar(){
+export default function Devolucao(){
     const navigation = useNavigation();
 
     function navigateMenu(){
@@ -19,7 +20,7 @@ export default function Requisitar(){
     function AlertSend(){
         Alert.alert(
             'Pedido Enviado com Sucesso !',
-            '( Se o teu pedido for confirmado serás notificado por mensagem na Aplicação )'
+            '( Serás notificado por mensagem na Aplicação de como efetuares a devolução )'
         )
         navigation.navigate('Menu');
     }
@@ -43,9 +44,9 @@ export default function Requisitar(){
             <ImageBackground source={rectangle} style={{width: 370, height: 640}}>
                 
                 <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 30}}>
-                    <Text style={{ fontSize: 18, color: "#D63578", fontWeight: "bold", textAlign: 'center'}}>REQUISITAR EQUIPAMENTO</Text>
+                    <Text style={{ fontSize: 18, color: "#D63578", fontWeight: "bold", textAlign: 'center'}}>DEVOLVER EQUIPAMENTO</Text>
                     
-                    <Text style={{ fontSize: 15, fontWeight: "bold", color: "#000", marginTop: 30}}>Equipamento a Requisitar:</Text>
+                    <Text style={{ fontSize: 15, fontWeight: "bold", color: "#000", marginTop: 30}}>Equipamento a Devolver:</Text>
                 </View>     
 
 
@@ -60,16 +61,22 @@ export default function Requisitar(){
                     <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>AudioVisual</Text>
                 </View>
 
-                <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 30}}>                  
-                    <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>Para que efeito precisas do Equipamento:</Text>
+                <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 30}}>
+                    <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>Em que dia fizeste a requisição:</Text>
+                </View>
+
+                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>             
                     <TextInput 
-                        style={styles.input}
-                        placeholder="     Descreve aqui tudo aquilo que irás fazer com o Equipamento"            
+                        style={{backgroundColor: "#fff", marginTop: 10, fontSize: 10, width: 150, height: 35, fontWeight: "bold", borderRadius: 3}}
+                        placeholder="                   /                    /     "            
                     />
+                    <TouchableOpacity>
+                        <Image source={calendar} style={{ width: 36, height: 38, marginLeft: 15}}/>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 30}}>                  
-                    <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>Quanto tempo irás precisar do Equipamento:</Text>
+                    <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>Numero da Requisição:</Text>
                     <TextInput 
                         style={styles.input}       
                     />

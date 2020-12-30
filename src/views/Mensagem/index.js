@@ -2,15 +2,15 @@ import React from 'react';
 import { ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import logoImg from '../../assets/logo.png';
-import bgImg from '../../assets/bg.png';
-import back from '../../assets/back.png';
-import rectangle from '../../assets/Rectangle.png';
-import mensagem from '../../assets/mensagem.png';
-import ava1 from '../../assets/ava1.png';
-import ava2 from '../../assets/ava2.png';
-import ava3 from '../../assets/ava3.png';
-import ava4 from '../../assets/ava4.png';
+import logoImg from '../../../assets/img/logo.png';
+import bgImg from '../../../assets/img/bg.png';
+import back from '../../../assets/img/back.png';
+import rectangle from '../../../assets/img/Rectangle.png';
+import mensagem from '../../../assets/img/mensagem.png';
+import ava1 from '../../../assets/img/ava1.png';
+import ava2 from '../../../assets/img/ava2.png';
+import ava3 from '../../../assets/img/ava3.png';
+import ava4 from '../../../assets/img/ava4.png';
 
 import styles from './styles';
 

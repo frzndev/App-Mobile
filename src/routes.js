@@ -4,16 +4,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const AppStack = createStackNavigator();
 
-import Inicio from'./pages/Inicio';
-import Login from './pages/Login';
-import Registar from './pages/Registar';
-import Esquecer from './pages/Esquecer';
-import Mensagem from './pages/Mensagem';
-import Menu from './pages/Menu';
-import Admin from './pages/Admin';
-import AdminMenu from './pages/AdminMenu';
-import Requisitar from './pages/Requisitar';
-import Devolucao from './pages/Devolucao';
+import Inicio from'./views/Inicio';
+import Login from './views/Login';
+import Registar from './views/Registar';
+import Esquecer from './views/Esquecer';
+import Mensagem from './views/Mensagem';
+import Menu from './views/Menu';
+import Admin from './views/Admin';
+import AdminMenu from './views/AdminMenu';
+import Requisitar from './views/Requisitar';
+import Devolucao from './views/Devolucao';
 
 export default function Routes() {
     return (
