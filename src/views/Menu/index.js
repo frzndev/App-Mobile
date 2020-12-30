@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import { ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { useNavigation } from '@react-navigation/native';
 
 import logoImg from '../../../assets/img/logo.png';
@@ -35,6 +37,20 @@ export default function Menu(){
         navigation.navigate('Admin');
     }
 
+    const [user,setUser]=useState(null);
+    const [numero,setNumero]=useState(null);
+
+    useEffect(()=>{
+        async function getInfo()
+        {
+            let response=await AsyncStorage.getItem('userData');
+            let json=JSON.parse(response);
+            setUser(json.nome);
+            setNumero(json.login);
+        }
+        getInfo();
+    },[]);
+
     return (
 
         <ImageBackground source={bgImg} style={styles.backgroundImage}>
@@ -55,12 +71,12 @@ export default function Menu(){
                 
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 15}}>
                     <Text style={{ fontSize: 18, color: "#D63578", fontWeight: "bold", textAlign: 'center'}}>Bem-Vindo, </Text>
-                    <Text style={{ fontSize: 18, color: "#000", fontWeight: "bold", textAlign: 'center'}}>Nuno Gomes</Text>
+                    <Text style={{ fontSize: 18, color: "#000", fontWeight: "bold", textAlign: 'center'}}>{user}</Text>
                 </View>                
 
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                     <Text style={{ fontSize: 18, color: "#D63578", fontWeight: "bold", textAlign: 'center'}}>Numero: </Text>
-                    <Text style={{ fontSize: 18, color: "#000", fontWeight: "bold", textAlign: 'center'}}>a38368</Text>
+                    <Text style={{ fontSize: 18, color: "#000", fontWeight: "bold", textAlign: 'center'}}>{numero}</Text>
                 </View>
 
                 <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 20}}>

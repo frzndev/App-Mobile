@@ -9,6 +9,15 @@ export default StyleSheet.create({
         justifyContent: 'center'
     },
 
+    login_msg:(text='none') => ({
+        fontWeight:"bold",
+        fontSize: 22,
+        color:"red",
+        marginTop: 10,
+        marginBottom: 15,
+        display: text
+    }),
+
     back: {
         marginTop: 40,
         marginLeft: 20
