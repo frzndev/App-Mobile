@@ -4,15 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { useNavigation } from '@react-navigation/native';
 
-import logoImg from '../../../assets/img/logo.png';
-import bgImg from '../../../assets/img/bg.png';
-import back from '../../../assets/img/back.png';
-import rectangle from '../../../assets/img/Rectangle.png';
-import seta from '../../../assets/img/seta.png';
-import settings from '../../../assets/img/settings.png';
-import mensagem from '../../../assets/img/mensagem.png';
-
-import {styles} from '../../../assets/css/styles';
+import { logoImg, bgImg, back, rectangle, seta, settings, mensagem } from '../../assets/img/index';
+import {styles} from '../../assets/css/styles';
 
 export default function Menu(){
     const navigation = useNavigation();
@@ -55,12 +48,10 @@ export default function Menu(){
 
         <ImageBackground source={bgImg} style={styles.backgroundImage}>
         
-        <View style={styles.back}>             
-
+        <View style={styles.back}>    
                 <TouchableOpacity onPress={navigateLogin}>
                     <Image source={back} style={{ width: 35, height: 30 }}/>
                 </TouchableOpacity>
-
         </View>
 
         <View style={styles.container}>  
@@ -105,19 +96,15 @@ export default function Menu(){
                 </View>
 
                 <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 100, marginLeft: -35}}>                    
-                    
                     <TouchableOpacity style={{marginLeft: 40}}>
                         <Image source={settings} style={{width: 30, height: 30, marginRight: 15}}/>
                     </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.button1} onPress={navigateMenu}>
+                    <TouchableOpacity style={styles.button1} onPress={navigateLogin}>
                         <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 12}}>Terminar Sessão</Text>
                     </TouchableOpacity>
-
                     <TouchableOpacity style={{marginLeft: 38}} onPress={navigateMensagem}>
                         <Image source={mensagem} style={{width: 40, height: 35, marginLeft: -25}}/>
                     </TouchableOpacity>
-
                 </View>
 
             </ImageBackground>

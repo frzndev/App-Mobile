@@ -5,13 +5,10 @@ import * as LocalAuthentication from 'expo-local-authentication';
 
 import { useNavigation } from '@react-navigation/native';
 
-import config from "../../../config/config.json";
+import config from "../../config/config.json";
 
-import logoImg from '../../../assets/img/logo.png';
-import bgImg from '../../../assets/img/bg.png';
-import back from '../../../assets/img/back.png';
-
-import {styles} from '../../../assets/css/styles';
+import { logoImg, bgImg, back } from '../../assets/img/index';
+import {styles} from '../../assets/css/styles';
 
 export default function Login(){
 

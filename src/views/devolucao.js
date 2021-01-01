@@ -2,13 +2,8 @@ import React from 'react';
 import { Alert, CheckBox, ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import logoImg from '../../../assets/img/logo.png';
-import bgImg from '../../../assets/img/bg.png';
-import back from '../../../assets/img/back.png';
-import rectangle from '../../../assets/img/Rectangle.png';
-import calendar from '../../../assets/img/calendar.png';
-
-import {styles} from '../../../assets/css/styles';
+import { logoImg, bgImg, back, rectangle, calendar } from '../../assets/img/index';
+import {styles} from '../../assets/css/styles';
 
 export default function Devolucao(){
     const navigation = useNavigation();

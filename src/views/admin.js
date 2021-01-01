@@ -2,11 +2,8 @@ import React from 'react';
 import { ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import logoImg from '../../../assets/img/logo.png';
-import bgImg from '../../../assets/img/bg.png';
-import back from '../../../assets/img/back.png';
-
-import {styles} from '../../../assets/css/styles';
+import { logoImg, bgImg, back } from '../../assets/img/index';
+import {styles} from '../../assets/css/styles';
 
 export default function Admin(){
     const navigation = useNavigation();

@@ -2,11 +2,8 @@ import React from 'react';
 import { ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import logoImg from '../../../assets/img/logo.png';
-import logoIpb from '../../../assets/img/ipb.png';
-import bgImg from '../../../assets/img/bg.png';
-
-import {styles} from '../../../assets/css/styles';
+import { logoImg, bgImg, ipb } from '../../assets/img/index';
+import {styles} from '../../assets/css/styles';
 
 export default function Inicio(){
     const navigation = useNavigation();
@@ -46,7 +43,7 @@ export default function Inicio(){
         </View>
 
         <View style={styles.container}>
-            <Image source={logoIpb} style={{width: 376, height: 73, marginTop: 90}}/>
+            <Image source={ipb} style={{width: 376, height: 73, marginTop: 90}}/>
         </View>
         </ImageBackground>
     );
