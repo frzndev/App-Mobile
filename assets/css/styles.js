@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native';
-import Constants from 'expo-constants';
+import { StyleSheet } from "react-native";
 
-export default StyleSheet.create({
+const styles = StyleSheet.create({
+
     container: {
         flex: 1,
         flexDirection: 'column',
@@ -25,8 +25,7 @@ export default StyleSheet.create({
 
     backgroundImage: {
         flex: 1,
-        resizeMode: 'cover',
-        justifyContent: 'center',
+        resizeMode: 'cover'
     },
 
     input: {
@@ -35,6 +34,14 @@ export default StyleSheet.create({
         width: 305,
         height: 40,
         fontWeight: "bold",
+        borderRadius: 3
+    },
+
+    button: {
+        width: 370, 
+        height: 40, 
+        marginTop: 10,  
+        marginLeft: 40,   
         borderRadius: 3
     },
 
@@ -54,3 +61,5 @@ export default StyleSheet.create({
     }
 
 });
+
+export {styles};

@@ -6,7 +6,7 @@ import logoImg from '../../../assets/img/logo.png';
 import logoIpb from '../../../assets/img/ipb.png';
 import bgImg from '../../../assets/img/bg.png';
 
-import styles from './styles';
+import {styles} from '../../../assets/css/styles';
 
 export default function Inicio(){
     const navigation = useNavigation();
@@ -33,14 +33,14 @@ export default function Inicio(){
         </View>
         
         <View style={styles.container}>
-            <Text style={{ color: "#000", fontWeight: "bold", fontSize: 16, marginTop: 200}}>Faz login e candidata-te já a receber um</Text>
-            <Text style={{ color: "#000", fontWeight: "bold", fontSize: 16}}>computador para as tuas aulas online</Text>
+            <Text style={{ color: "#000", fontWeight: "bold", fontSize: 16, marginTop: 200 }}>Faz login e candidata-te já a receber um</Text>
+            <Text style={{ color: "#000", fontWeight: "bold", fontSize: 16 }}>computador para as tuas aulas online</Text>
 
-            <TouchableOpacity style={styles.button1} onPress={navigateRegistar}>
+            <TouchableOpacity style={[styles.button1, {marginTop: 15, width: 200}]} onPress={navigateRegistar}>
                 <Text style={{ fontSize: 16, color: "#fff", textAlign: 'center', marginTop: 7}}>Quero-me Registar</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button2} onPress={navigateLogin}>
+            <TouchableOpacity style={[styles.button2, {marginTop: 15, width: 200, marginLeft: 10}]} onPress={navigateLogin}>
                 <Text style={{ fontSize: 16, color: "#fff", textAlign: 'center', marginTop: 7}}>Já tenho Conta</Text>
             </TouchableOpacity>            
         </View>

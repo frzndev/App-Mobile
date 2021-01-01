@@ -12,7 +12,7 @@ import ava2 from '../../../assets/img/ava2.png';
 import ava3 from '../../../assets/img/ava3.png';
 import ava4 from '../../../assets/img/ava4.png';
 
-import styles from './styles';
+import {styles} from '../../../assets/css/styles';
 
 export default function Mensagem(){
     const navigation = useNavigation();

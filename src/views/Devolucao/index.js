@@ -8,7 +8,7 @@ import back from '../../../assets/img/back.png';
 import rectangle from '../../../assets/img/Rectangle.png';
 import calendar from '../../../assets/img/calendar.png';
 
-import styles from './styles';
+import {styles} from '../../../assets/css/styles';
 
 export default function Devolucao(){
     const navigation = useNavigation();

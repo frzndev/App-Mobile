@@ -6,7 +6,7 @@ import logoImg from '../../../assets/img/logo.png';
 import bgImg from '../../../assets/img/bg.png';
 import back from '../../../assets/img/back.png';
 
-import styles from './styles';
+import {styles} from '../../../assets/css/styles';
 
 export default function Esquecer(){
     const navigation = useNavigation();
@@ -20,9 +20,7 @@ export default function Esquecer(){
     }
 
     function AlertSend(){
-        Alert.alert(
-            'Email de Recuperação Enviado com Sucesso !'
-        )
+        Alert.alert('Email de Recuperação Enviado com Sucesso !');
         navigation.navigate('Login');
     }
 
@@ -42,36 +40,30 @@ export default function Esquecer(){
 
             <Image source={logoImg} style={{ width: 180, height: 140}}/>
 
-            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 30, marginTop: -10}}>Recuperar Password</Text>
-
-            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16, marginTop: 50}}>Insere o teu Email para poderes </Text>
-            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16, }}>Recuperar a tua Password</Text>
+            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 30 }}>Recuperar Password</Text>
 
         </View>
 
-        <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+        <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginBottom: 50}}>
 
             <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16, marginLeft: -250}}>Email: </Text>
 
             <TextInput 
                 style={styles.input}
-                 placeholder="  aXXXXX@alunos.ipb.pt"
+                placeholder="  aXXXXX@alunos.ipb.pt"
             />
 
-            <TouchableOpacity style={styles.button1} onPress={AlertSend}>
+            <TouchableOpacity style={[styles.button1, {marginTop: 15}]} onPress={AlertSend}>
                 <Text style={{ fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 10}}>Enviar Email</Text>
             </TouchableOpacity>
 
         </View>
 
         <View style={{flex: 1, flexDirection: 'column', alignItems: 'center'}}>
-
-            <Text style={{ fontSize: 18, color: "#000", marginBottom: 10}}>Ainda não tens conta ?</Text>
-
+            <Text style={{ fontSize: 18, color: "#fff", marginBottom: 10}}>Ainda não tens conta ?</Text>
             <TouchableOpacity style={styles.button1} onPress={navigateRegistar}>
                 <Text style={{ fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 9}}>Quero-me registar</Text>
             </TouchableOpacity>
-
         </View>
 
         </ImageBackground>

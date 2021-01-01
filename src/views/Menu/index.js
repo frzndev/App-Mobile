@@ -12,7 +12,7 @@ import seta from '../../../assets/img/seta.png';
 import settings from '../../../assets/img/settings.png';
 import mensagem from '../../../assets/img/mensagem.png';
 
-import styles from './styles';
+import {styles} from '../../../assets/css/styles';
 
 export default function Menu(){
     const navigation = useNavigation();
@@ -104,17 +104,17 @@ export default function Menu(){
                     </TouchableOpacity>
                 </View>
 
-                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 200, marginLeft: -35}}>                    
+                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 100, marginLeft: -35}}>                    
                     
-                    <TouchableOpacity style={styles.butoes}>
+                    <TouchableOpacity style={{marginLeft: 40}}>
                         <Image source={settings} style={{width: 30, height: 30, marginRight: 15}}/>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button1} onPress={navigateLogin}>
+                    <TouchableOpacity style={styles.button1} onPress={navigateMenu}>
                         <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 12}}>Terminar Sessão</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.butoes} onPress={navigateMensagem}>
+                    <TouchableOpacity style={{marginLeft: 38}} onPress={navigateMensagem}>
                         <Image source={mensagem} style={{width: 40, height: 35, marginLeft: -25}}/>
                     </TouchableOpacity>
 

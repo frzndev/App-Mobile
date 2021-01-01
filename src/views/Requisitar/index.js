@@ -7,7 +7,7 @@ import bgImg from '../../../assets/img/bg.png';
 import back from '../../../assets/img/back.png';
 import rectangle from '../../../assets/img/Rectangle.png';
 
-import styles from './styles';
+import {styles} from '../../../assets/css/styles';
 
 export default function Requisitar(){
     const navigation = useNavigation();
@@ -63,7 +63,7 @@ export default function Requisitar(){
                 <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 30}}>                  
                     <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>Para que efeito precisas do Equipamento:</Text>
                     <TextInput 
-                        style={styles.input}
+                        style={[styles.input, {fontSize: 10}]}
                         placeholder="     Descreve aqui tudo aquilo que irás fazer com o Equipamento"            
                     />
                 </View>
@@ -71,11 +71,11 @@ export default function Requisitar(){
                 <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 30}}>                  
                     <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>Quanto tempo irás precisar do Equipamento:</Text>
                     <TextInput 
-                        style={styles.input}       
+                        style={[styles.input, {fontSize: 10}]}      
                     />
                 </View>
 
-                <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>                    
+                <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 100}}>                    
                     
                     <TouchableOpacity style={styles.button1} onPress={AlertSend}>
                         <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 12}}>Enviar Pedido</Text>

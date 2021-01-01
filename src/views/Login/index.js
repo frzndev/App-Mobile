@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import { ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as LocalAuthentication from 'expo-local-authentication';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -10,7 +11,7 @@ import logoImg from '../../../assets/img/logo.png';
 import bgImg from '../../../assets/img/bg.png';
 import back from '../../../assets/img/back.png';
 
-import styles from './styles';
+import {styles} from '../../../assets/css/styles';
 
 export default function Login(){
 
@@ -37,6 +38,49 @@ export default function Login(){
     const [password, setPassword] = useState(null);
     const [login, setLogin] = useState(false);
 
+    useEffect(()=>{
+        verifyLogin();
+    },[]);
+    
+    useEffect(()=>{
+        if(login === true){
+            biometric();
+        }
+    },[login]);
+
+    //Função para verificar se o usuário já possui algum login guardado no AsyncStorage
+    async function verifyLogin()
+    {
+        let response = await AsyncStorage.getItem('userData');
+        let json = await JSON.parse(response);
+        if(json !== null){
+            setUser(json.login);
+            setPassword(json.password);
+            setLogin(true);
+        }
+    }
+
+    // Função Biometria
+    async function biometric()
+    {
+        let compatible = await LocalAuthentication.hasHardwareAsync();
+        if (compatible){
+            let biometricRecords = await LocalAuthentication.isEnrolledAsync();
+            if (!biometricRecords){
+                alert('Biometria não foi encontrada !');
+            } else {
+                let result = await  LocalAuthentication.authenticateAsync();
+                if (result.success){
+                    sendForm();
+                } else {
+                    setUser(null);
+                    setPassword(null);
+                }
+            }
+        }
+    }
+
+    // Função para enviar o Username e Password para o BackEnd
     async function sendForm(){
         let response = await fetch(`${config.urlRoot}login`,{
             method: 'POST',

@@ -6,7 +6,7 @@ import logoImg from '../../../assets/img/logo.png';
 import bgImg from '../../../assets/img/bg.png';
 import back from '../../../assets/img/back.png';
 
-import styles from './styles';
+import {styles} from '../../../assets/css/styles';
 
 export default function Admin(){
     const navigation = useNavigation();
@@ -45,7 +45,7 @@ export default function Admin(){
 
             <TextInput 
                 style={styles.input}
-                 placeholder="  aXXXXX"
+                placeholder="  aXXXXX"
             />
 
             <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16, marginTop: 10, marginLeft: -220}}>Password: </Text>
@@ -56,7 +56,7 @@ export default function Admin(){
                 placeholder="  ***********"
             />
 
-            <TouchableOpacity style={styles.button1} onPress={navigateAdminMenu}>
+            <TouchableOpacity style={[styles.button1, {marginTop: 15}]} onPress={navigateAdminMenu}>
                 <Text style={{ fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 10}}>Entrar</Text>
             </TouchableOpacity> 
 

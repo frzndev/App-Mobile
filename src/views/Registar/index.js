@@ -6,7 +6,7 @@ import logoImg from '../../../assets/img/logo.png';
 import bgImg from '../../../assets/img/bg.png';
 import back from '../../../assets/img/back.png';
 
-import styles from './styles';
+import {styles} from '../../../assets/css/styles';
 
 export default function Registar(){
     const navigation = useNavigation();
@@ -47,7 +47,7 @@ export default function Registar(){
             <Text style={{ color: "#000", fontWeight: "bold", fontSize: 16, marginLeft: -220}}>Username: </Text>
             <TextInput 
                 style={styles.input}
-                placeholder=" * Ex: aXXXXX"
+                placeholder=" Ex: aXXXXX"
             />
 
             <Text style={{ color: "#000", fontWeight: "bold", fontSize: 16, marginTop: 2, marginLeft: -220}}>Password: </Text>
@@ -67,16 +67,16 @@ export default function Registar(){
             <Text style={{ color: "#000", fontWeight: "bold", fontSize: 16, marginTop: 2, marginLeft: -250}}>Email: </Text>
             <TextInput 
                 style={styles.input}
-                placeholder=" * aXXXXX@alunos.ipb.pt"
+                placeholder=" aXXXXX@alunos.ipb.pt"
             />
 
             <Text style={{ color: "#000", fontWeight: "bold", fontSize: 16, marginTop: 2, marginLeft: -110}}>Numero Mecanográfico: </Text>
             <TextInput 
                 style={styles.input}
-                placeholder=" * Ex: aXXXXX"
+                placeholder=" Ex: aXXXXX"
             />
 
-            <TouchableOpacity style={styles.button} onPress={AlertSend}>
+            <TouchableOpacity style={[styles.button1, {marginTop: 15}]} onPress={AlertSend}>
                 <Text style={{ fontSize: 16, color: "#fff", textAlign: 'center', marginTop: 8}}>Registar</Text>
             </TouchableOpacity>
 
