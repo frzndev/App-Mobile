@@ -1,10 +1,10 @@
 import React, { useState, useEffect }  from 'react';
-import { ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
+import { ImageBackground, View, Image, Text, BackHandler, TouchableOpacity, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { useNavigation } from '@react-navigation/native';
 
-import { logoImg, bgImg, back, rectangle, seta, settings, mensagem } from '../../assets/img/index';
+import { logoImg, bgImg, rectangle, seta, settings, mensagem } from '../../assets/img/index';
 import {styles} from '../../assets/css/styles';
 
 export default function Menu(){
@@ -27,33 +27,67 @@ export default function Menu(){
     }
 
     function navigateAdmin(){
-        navigation.navigate('Admin');
+        navigation.navigate('AdminMenu');
+    }
+    
+    function navigateSettings(){
+        navigation.navigate('Settings');
     }
 
+    const [display, setDisplay] = useState('none');
     const [user,setUser]=useState(null);
     const [numero,setNumero]=useState(null);
 
     useEffect(()=>{
-        async function getInfo()
-        {
-            let response=await AsyncStorage.getItem('userData');
-            let json=JSON.parse(response);
-            setUser(json.nome);
-            setNumero(json.login);
-        }
         getInfo();
     },[]);
+
+    useEffect(() => {
+        const backAction = () => {
+            Alert.alert("Aviso", "Deseja mesmo sair da Aplicação sem Terminar Sessão ?", [{
+                text: "Não",
+                onPress: () => null,
+                style: "cancel"
+            },
+                { 
+                    text: "Sim", onPress: () => {
+                        BackHandler.exitApp();
+                    }
+                }
+            ]);
+            return true;
+        };
+    
+        const backHandler = BackHandler.addEventListener(
+        "hardwareBackPress",
+        backAction
+        );
+    
+        return () => backHandler.remove();
+    }, []);
+
+    async function getInfo()
+    {
+        let response = await AsyncStorage.getItem('userData');
+        let json = JSON.parse(response);
+        if ( json.tipodeutilizador === 1 ) {
+            setDisplay('flex');
+        } else {
+            setDisplay('none');
+        }
+        setUser(json.nome);
+        setNumero(json.login);
+    }
+
+    async function logout() {
+        await AsyncStorage.clear();
+        navigateLogin();
+    }
 
     return (
 
         <ImageBackground source={bgImg} style={styles.backgroundImage}>
         
-        <View style={styles.back}>    
-                <TouchableOpacity onPress={navigateLogin}>
-                    <Image source={back} style={{ width: 35, height: 30 }}/>
-                </TouchableOpacity>
-        </View>
-
         <View style={styles.container}>  
 
             <Image source={logoImg} style={{ width: 180, height: 140}}/>
@@ -88,7 +122,7 @@ export default function Menu(){
                     </TouchableOpacity>
                 </View>
                 
-                <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>                    
+                <View style={[styles.login_msg(display), {flexDirection: 'row', alignItems: 'center', marginTop: 10}]}>                    
                     <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Login como Administrador</Text>
                     <TouchableOpacity style={styles.button} onPress={navigateAdmin}>
                         <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: -5}}/>
@@ -96,10 +130,10 @@ export default function Menu(){
                 </View>
 
                 <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 100, marginLeft: -35}}>                    
-                    <TouchableOpacity style={{marginLeft: 40}}>
+                    <TouchableOpacity style={{marginLeft: 40}} onPress={navigateSettings}>
                         <Image source={settings} style={{width: 30, height: 30, marginRight: 15}}/>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button1} onPress={navigateLogin}>
+                    <TouchableOpacity style={styles.button1} onPress={() => logout()}>
                         <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 12}}>Terminar Sessão</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={{marginLeft: 38}} onPress={navigateMensagem}>

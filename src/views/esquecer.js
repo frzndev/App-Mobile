@@ -47,7 +47,7 @@ export default function Esquecer(){
 
             <TextInput 
                 style={styles.input}
-                placeholder="  aXXXXX@alunos.ipb.pt"
+                placeholder="aXXXXX@alunos.ipb.pt"
             />
 
             <TouchableOpacity style={[styles.button1, {marginTop: 15}]} onPress={AlertSend}>

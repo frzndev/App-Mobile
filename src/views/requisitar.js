@@ -24,12 +24,10 @@ export default function Requisitar(){
 
         <ImageBackground source={bgImg} style={styles.backgroundImage}>
         
-        <View style={styles.back}>             
-
+        <View style={styles.back}>     
                 <TouchableOpacity onPress={navigateMenu}>
                     <Image source={back} style={{ width: 35, height: 30 }}/>
                 </TouchableOpacity>
-
         </View>
 
         <View style={styles.container}>  
@@ -60,7 +58,7 @@ export default function Requisitar(){
                     <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>Para que efeito precisas do Equipamento:</Text>
                     <TextInput 
                         style={[styles.input, {fontSize: 10}]}
-                        placeholder="     Descreve aqui tudo aquilo que irás fazer com o Equipamento"            
+                        placeholder="Descreve aqui tudo aquilo que irás fazer com o Equipamento"            
                     />
                 </View>
 
@@ -72,11 +70,9 @@ export default function Requisitar(){
                 </View>
 
                 <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 100}}>                    
-                    
                     <TouchableOpacity style={styles.button1} onPress={AlertSend}>
-                        <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 12}}>Enviar Pedido</Text>
+                        <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 10}}>Enviar Pedido</Text>
                     </TouchableOpacity>
-
                 </View>
 
             </ImageBackground>

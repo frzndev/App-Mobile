@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         width: 305,
         height: 40,
         fontWeight: "bold",
-        borderRadius: 3
+        borderRadius: 3,
+        paddingHorizontal: 10
     },
 
     button: {

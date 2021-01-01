@@ -16,12 +16,10 @@ export default function Mensagem(){
 
         <ImageBackground source={bgImg} style={styles.backgroundImage}>
         
-        <View style={styles.back}>             
-
+        <View style={styles.back}> 
                 <TouchableOpacity onPress={navigateMenu}>
                     <Image source={back} style={{ width: 35, height: 30 }}/>
                 </TouchableOpacity>
-
         </View>
 
         <View style={styles.container}>  
@@ -72,11 +70,9 @@ export default function Mensagem(){
                 </View>
 
                 <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 50}}>                    
-                    
                     <TouchableOpacity style={styles.button1}>
                         <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 12}}>Nova Mensagem</Text>
                     </TouchableOpacity>
-
                 </View>
 
             </ImageBackground>

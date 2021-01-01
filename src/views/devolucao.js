@@ -15,7 +15,7 @@ export default function Devolucao(){
     function AlertSend(){
         Alert.alert(
             'Pedido Enviado com Sucesso !',
-            '( Serás notificado por mensagem na Aplicação de como efetuares a devolução )'
+            '( Serás notificado por mensagem na Aplicação de como e quando efetuares a devolução )'
         )
         navigation.navigate('Menu');
     }
@@ -24,26 +24,21 @@ export default function Devolucao(){
 
         <ImageBackground source={bgImg} style={styles.backgroundImage}>
         
-        <View style={styles.back}>             
-
+        <View style={styles.back}> 
                 <TouchableOpacity onPress={navigateMenu}>
                     <Image source={back} style={{ width: 35, height: 30 }}/>
                 </TouchableOpacity>
-
         </View>
 
-        <View style={styles.container}>  
-
+        <View style={styles.container}> 
             <Image source={logoImg} style={{ width: 180, height: 140}}/>
 
             <ImageBackground source={rectangle} style={{width: 370, height: 640}}>
                 
                 <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 30}}>
                     <Text style={{ fontSize: 18, color: "#D63578", fontWeight: "bold", textAlign: 'center'}}>DEVOLVER EQUIPAMENTO</Text>
-                    
                     <Text style={{ fontSize: 15, fontWeight: "bold", color: "#000", marginTop: 30}}>Equipamento a Devolver:</Text>
                 </View>     
-
 
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10}}>                  
                     <CheckBox
@@ -77,12 +72,10 @@ export default function Devolucao(){
                     />
                 </View>
 
-                <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>                    
-                    
+                <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 100}}>                    
                     <TouchableOpacity style={styles.button1} onPress={AlertSend}>
-                        <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 12}}>Enviar Pedido</Text>
+                        <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 10}}>Enviar Pedido</Text>
                     </TouchableOpacity>
-
                 </View>
 
             </ImageBackground>

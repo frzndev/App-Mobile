@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const AppStack = createStackNavigator();
 
-import { Inicio, Login, Registar, Esquecer, Mensagem, Menu, Admin, AdminMenu, Requisitar, Devolucao } from '../src/index';
+import { Inicio, Login, Registar, Esquecer, Mensagem, Settings, Menu, AdminMenu, Requisitar, Devolucao } from '../src/index';
 
 export default function Routes() {
     return (
@@ -15,8 +15,8 @@ export default function Routes() {
                 <AppStack.Screen name="Registar" component={Registar} />
                 <AppStack.Screen name="Esquecer" component={Esquecer} />
                 <AppStack.Screen name="Mensagem" component={Mensagem} />
+                <AppStack.Screen name="Settings" component={Settings} />
                 <AppStack.Screen name="Menu" component={Menu} />
-                <AppStack.Screen name="Admin" component={Admin} />
                 <AppStack.Screen name="AdminMenu" component={AdminMenu} />
                 <AppStack.Screen name="Requisitar" component={Requisitar} />
                 <AppStack.Screen name="Devolucao" component={Devolucao} />

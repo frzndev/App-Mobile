@@ -23,20 +23,15 @@ export default function Registar(){
 
         <ImageBackground source={bgImg} style={styles.backgroundImage}>
         
-        <View style={styles.back}>             
-
+        <View style={styles.back}>  
             <TouchableOpacity onPress={navigateLogin}>
                 <Image source={back} style={{ width: 35, height: 30 }}/>
             </TouchableOpacity>
-
         </View>
 
-        <View style={styles.container}>            
-
+        <View style={styles.container}>  
             <Image source={logoImg} style={{ width: 180, height: 140}}/>
-
             <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 30, marginTop: -10}}>Registar Conta</Text>
-
         </View>
 
         <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginBottom: 150}}>

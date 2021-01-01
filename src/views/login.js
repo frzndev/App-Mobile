@@ -126,14 +126,14 @@ export default function Login(){
                 <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16, marginLeft: -220}}>Username: </Text>
                 <TextInput 
                     style={styles.input}
-                    placeholder="  aXXXXX"
+                    placeholder="aXXXXX"
                     onChangeText={text => setUser(text)}
                 />
                 <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16, marginTop: 10, marginLeft: -220}}>Password: </Text>
                 <TextInput 
                     style={styles.input}
                     secureTextEntry={true}
-                    placeholder="  ***********"
+                    placeholder="***********"
                     onChangeText={text => setPassword(text)}
                 />
             </View>
