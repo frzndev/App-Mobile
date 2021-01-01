@@ -8,7 +8,6 @@ const app=express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static('assets'));
 
 let user = models.User;
 
@@ -44,5 +43,5 @@ app.post('/verifyPassword', async (req,res) => {
 
 let port=process.env.PORT || 3000;
 app.listen(port,(req,res)=>{
-    console.log('Servidor Rodando');
+    console.log('running...');
 });

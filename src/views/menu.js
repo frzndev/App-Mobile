@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect } from 'react';
 import { ImageBackground, View, Image, Text, BackHandler, TouchableOpacity, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -123,7 +123,7 @@ export default function Menu(){
                 </View>
                 
                 <View style={[styles.login_msg(display), {flexDirection: 'row', alignItems: 'center', marginTop: 10}]}>                    
-                    <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Login como Administrador</Text>
+                    <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Menu Administrador</Text>
                     <TouchableOpacity style={styles.button} onPress={navigateAdmin}>
                         <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: -5}}/>
                     </TouchableOpacity>
