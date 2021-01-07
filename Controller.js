@@ -23,6 +23,18 @@ app.post('/login', async (req,res) => {
     }
 });
 
+app.post('/register', async (req,res) => {
+    await user.create({
+        login: req.body.login,
+        password: req.body.password,
+        nome: req.body.nome,
+        email: req.body.email,
+        telefone: req.body.telefone,
+        escola: req.body.escola,
+        tipodeutilizador: req.body.tipodeutilizador
+    })
+});
+
 app.post('/verifyPassword', async (req,res) => {
     let response = await user.findOne({
         where:{ id:req.body.id, password: req.body.passwordAntiga }
