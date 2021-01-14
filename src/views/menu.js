@@ -125,7 +125,7 @@ export default function Menu(){
                 <View style={[styles.login_msg(display), {flexDirection: 'row', alignItems: 'center', marginTop: 10}]}>                    
                     <Text style={{ fontSize: 18, fontWeight: "bold", color: "#000", marginLeft: 40,}}>Menu Administrador</Text>
                     <TouchableOpacity style={styles.button} onPress={navigateAdmin}>
-                        <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: -5}}/>
+                        <Image source={seta} style={{ width: 40, height: 45, marginTop: -5, marginLeft: 45}}/>
                     </TouchableOpacity>
                 </View>
 
