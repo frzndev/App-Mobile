@@ -1,20 +1,14 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('EstadoEquipamentos', {
+    await queryInterface.createTable('EstadoRequisicaos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      disponivel: {
-        type: Sequelize.STRING
-      },
-      ocupado: {
-        type: Sequelize.STRING
-      },
-      espera: {
+      estado: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -28,6 +22,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('EstadoEquipamentos');
+    await queryInterface.dropTable('EstadoRequisicaos');
   }
 };

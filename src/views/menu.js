@@ -8,6 +8,7 @@ import { logoImg, bgImg, rectangle, seta, settings, mensagem } from '../../asset
 import {styles} from '../../assets/css/styles';
 
 export default function Menu(){
+    
     const navigation = useNavigation();
 
     function navigateLogin(){

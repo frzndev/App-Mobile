@@ -9,4 +9,9 @@ import AdminMenu from '../src/views/adminMenu';
 import Requisitar from '../src/views/requisitar';
 import Devolucao from '../src/views/devolucao';
 
-export {Inicio, Login, Registar, Esquecer, Mensagem, Settings, Menu, AdminMenu, Requisitar, Devolucao};
+import AdminCandidaturas from '../src/views/admin/candidaturas';
+import AdminContas from '../src/views/admin/contas';
+import AdminDevolucoes from '../src/views/admin/devolucoes';
+import AdminEquipamentos from '../src/views/admin/equipamentos';
+
+export {Inicio, Login, Registar, Esquecer, Mensagem, Settings, Menu, AdminMenu, Requisitar, Devolucao, AdminCandidaturas, AdminContas, AdminDevolucoes, AdminEquipamentos};

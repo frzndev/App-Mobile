@@ -123,7 +123,7 @@ export default function Login(){
             </View>
 
             <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16, marginLeft: -220}}>Username: </Text>
+                <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16, marginLeft: -100}}>Número Mecanográfico: </Text>
                 <TextInput 
                     style={styles.input}
                     placeholder="aXXXXX"

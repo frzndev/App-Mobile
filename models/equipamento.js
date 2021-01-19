@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Equipamento.init({
-    tipo_equipamento: DataTypes.INTEGER,
+    tipoequipamento: DataTypes.INTEGER,
     marca: DataTypes.STRING,
     modelo: DataTypes.STRING,
     estado: DataTypes.INTEGER

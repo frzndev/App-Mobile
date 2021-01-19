@@ -14,9 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   EstadoEquipamento.init({
-    disponivel: DataTypes.STRING,
-    ocupado: DataTypes.STRING,
-    espera: DataTypes.STRING
+    estado: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'EstadoEquipamento',

@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tipo_equipamento: {
+      tipoequipamento: {
         type: Sequelize.INTEGER
       },
       marca: {

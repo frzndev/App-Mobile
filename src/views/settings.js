@@ -52,7 +52,7 @@ export default function Menu(){
     return (
 
         <ImageBackground source={bgImg} style={styles.backgroundImage}>
-        
+
         <View style={styles.back}>    
                 <TouchableOpacity onPress={navigateMenu}>
                     <Image source={back} style={{ width: 35, height: 30 }}/>

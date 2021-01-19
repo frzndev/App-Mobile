@@ -98,7 +98,7 @@ export default function Registar(){
             
             <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 30, marginTop: 15}}>Registar Conta</Text>
 
-            <Text style={{ color: "#000", fontWeight: "bold", fontSize: 16, marginLeft: -210}}>Username: * </Text>
+            <Text style={{ color: "#000", fontWeight: "bold", fontSize: 16, marginLeft: -100}}>Número Mecanográfico: * </Text>
             <TextInput 
                 style={styles.input}
                 placeholder="Ex: aXXXXX"

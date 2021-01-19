@@ -10,7 +10,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 let user = models.User;
+let equipamento = models.Equipamento;
 
+// ROTAS AUTENTICAÇÃO
 app.post('/login', async (req,res) => {
     let response = await user.findOne({
         where:{ login:req.body.login, password: req.body.password }
@@ -53,7 +55,32 @@ app.post('/verifyPassword', async (req,res) => {
     }
 });
 
-let port=process.env.PORT || 3000;
+// ROTAS USUARIO
+
+
+// ROTAS ADMIN
+app.post('/registerequipamento', async (req,res) => {
+    await equipamento.create({
+        tipoequipamento: req.body.tipoequipamento,
+        marca: req.body.marca,
+        modelo: req.body.modelo,
+        estado: req.body.estado
+    })
+});
+
+app.post('/listagem', (req, res) => {
+    equipamento.findAll({
+        where: {
+            tipoequipamento: req.body.tipoequipamento
+        },
+        attributes: ['marca', 'modelo', 'estado']
+    }).then(equipamento => {
+        res.status(200).json(equipamento)
+    })
+});
+
+
+let port = process.env.PORT || 3000;
 app.listen(port,(req,res)=>{
     console.log('running...');
 });
