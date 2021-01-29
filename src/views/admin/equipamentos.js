@@ -44,23 +44,13 @@ export default function AdminEquipamentos(){
     const [ tipoequipamento, setTipoEquipamento ] = useState(null);
     const [ marca, setMarca ] = useState(null);
     const [ modelo, setModelo ] = useState(null);
-    // const [ estado, setEstado ] = useState(null);
-    const [response, setResponse] = useState(null);
 
-    const [CheckBox1, setCheckBox1] = useState(false)
-    const [CheckBox2, setCheckBox2] = useState(false)
-    const [CheckBox3, setCheckBox3] = useState(false)
-    const [CheckBox4, setCheckBox4] = useState(false)
+    const [CheckBox1, setCheckBox1] = useState(false);
+    const [CheckBox2, setCheckBox2] = useState(false);
+    const [CheckBox3, setCheckBox3] = useState(false);
+    const [CheckBox4, setCheckBox4] = useState(false);
     
-    const [DropDownData, setDropDownData] = useState([])
-
-    let data = [{
-        value: 'Banana',
-    }, {
-        value: 'Mango',
-    }, {
-        value: 'Pear',
-    }];
+    const [DropDownData, setDropDownData] = useState([]);
 
     // Função para enviar o Dados para o BackEnd
     async function verifyForm(){
@@ -114,7 +104,7 @@ export default function AdminEquipamentos(){
         if (tipoequipamento === null){
             AlertErrSend2();
         } else {
-            let response = await fetch(`${config.urlRoot}listagem`,{
+            let response = await fetch(`${config.urlRoot}equipamentlist`,{
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -235,10 +225,9 @@ export default function AdminEquipamentos(){
                     <Dropdown
                         label='Seleciona o Equipamento'
                         selectedItemColor="#D63578"
-                        data={DropDownData.drop_down_data}                
+                        data={DropDownData.drop_down_data}            
                     />
                 </View>
-
                 <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 20}}>
                     <TouchableOpacity style={[styles.button1, {marginTop: 15}]}>
                         <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 10}}>Alterar Equipamento</Text>

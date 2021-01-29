@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
+import { ImageBackground, View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { logoImg, bgImg, ipb } from '../../assets/img/index';

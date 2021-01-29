@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 let user = models.User;
+let requisicao = models.Requisicao;
 let equipamento = models.Equipamento;
 
 // ROTAS AUTENTICAÇÃO
@@ -56,28 +57,81 @@ app.post('/verifyPassword', async (req,res) => {
 });
 
 // ROTAS USUARIO
-
-
-// ROTAS ADMIN
-app.post('/registerequipamento', async (req,res) => {
-    await equipamento.create({
-        tipoequipamento: req.body.tipoequipamento,
-        marca: req.body.marca,
-        modelo: req.body.modelo,
-        estado: req.body.estado
-    })
-});
-
-app.post('/listagem', (req, res) => {
+app.post('/listEquipamments', (req, res) => {
     equipamento.findAll({
         where: {
-            tipoequipamento: req.body.tipoequipamento
+            tipoequipamento: req.body.tipoequipamento,
+            estado: 1
         },
-        attributes: ['marca', 'modelo', 'estado']
+        attributes: ['id', 'marca', 'modelo']
     }).then(equipamento => {
         res.status(200).json(equipamento)
     })
 });
+
+app.post('/registerRequisicao', async (req,res) => {
+    await requisicao.create({
+        utilizador_id: req.body.utilizador_id,
+        equipamento_id: req.body.equipamento_id,
+        data_requisicao: req.body.data_requisicao,
+        data_devolucao: req.body.data_devolucao,
+        descricao: req.body.descricao,
+        tempo_necessario: req.body.tempo_necessario,
+        estado: req.body.estado
+    })
+});
+
+app.post('/listRequiredEquipamments', (req, res) => {
+    requisicao.findAll({
+        where: {
+            utilizador_id: req.body.utilizador_id,
+            data_devolucao: null
+        },
+        attributes: ['id', 'equipamento_id', 'data_requisicao', 'estado']
+    }).then(requisicao => {
+        res.status(200).json(requisicao)
+        console.log(requisicao)
+    })
+});
+
+
+// ROTAS ADMIN
+    // GERIR USERS
+    app.post('/userlist', (req, res) => {
+        user.findAll({
+            where: {
+                tipodeutilizador: req.body.tipodeutilizador
+            },
+            attributes: ['id', 'login', 'password', 'nome', 'email', 'telefone', 'escola']
+        }).then(user => {
+            res.status(200).json(user)
+        })
+    });
+
+    // GERIR REQUISIÇÕES
+
+    // GERIR DEVOLUÇÕES
+
+    // GERIR EQUIPAMENTOS
+    app.post('/registerequipamento', async (req,res) => {
+        await equipamento.create({
+            tipoequipamento: req.body.tipoequipamento,
+            marca: req.body.marca,
+            modelo: req.body.modelo,
+            estado: req.body.estado
+        })
+    });
+
+    app.post('/equipamentlist', (req, res) => {
+        equipamento.findAll({
+            where: {
+                tipoequipamento: req.body.tipoequipamento
+            },
+            attributes: ['marca', 'modelo', 'estado']
+        }).then(equipamento => {
+            res.status(200).json(equipamento)
+        })
+    });
 
 
 let port = process.env.PORT || 3000;

@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, ImageBackground, View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import CheckBox from '@react-native-community/checkbox';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Dropdown } from 'react-native-material-dropdown';
+
+import config from "../../config/config.json";
 
 import { logoImg, bgImg, back, rectangle, calendar } from '../../assets/img/index';
 import {styles} from '../../assets/css/styles';
 
 export default function Devolucao(){
+
+    const [utilizadorid, setUtilizadorId] = useState(null);
+    const [equipamentoid, setEquipamentoId] = useState(null);
+
+    const [ DropDownData, setDropDownData ] = useState([]);
+
     const navigation = useNavigation();
 
     function navigateMenu(){
@@ -21,8 +30,30 @@ export default function Devolucao(){
         navigation.navigate('Menu');
     }
 
-    const [CheckBox1, setCheckBox1] = useState(false)
-    const [CheckBox2, setCheckBox2] = useState(false)
+    useEffect(()=>{
+        getInfo();
+        list();
+    },[]);
+
+    async function getInfo()
+    {
+        let response = await AsyncStorage.getItem('userData');
+        let json = JSON.parse(response);
+        setUtilizadorId(json.id);
+    }
+
+    async function list(){
+        let response = await fetch(`${config.urlRoot}listRequiredEquipamments`,{
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify({
+                utilizador_id: utilizadorid
+            })
+        });
+    }
 
     return (
 
@@ -41,50 +72,21 @@ export default function Devolucao(){
                 
                 <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 30}}>
                     <Text style={{ fontSize: 18, color: "#D63578", fontWeight: "bold", textAlign: 'center'}}>DEVOLVER EQUIPAMENTO</Text>
-                    <Text style={{ fontSize: 15, fontWeight: "bold", color: "#000", marginTop: 30}}>Equipamento a Devolver:</Text>
-                </View>     
-
-                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10}}>                  
-                    <CheckBox
-                        disabled={false}
-                        value={CheckBox1}
-                        onValueChange={(Value) => setCheckBox1(Value)}
-                        onChange={() => setCheckBox2(false)}
-                    />
-                    <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>Computador</Text>
-                    <CheckBox
-                        disabled={false}
-                        value={CheckBox2}
-                        onValueChange={(Value) => setCheckBox2(Value)}
-                        onChange={() => setCheckBox1(false)}
-                    />
-                    <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>AudioVisual</Text>
+                    <Text style={{ fontSize: 15, fontWeight: "bold", color: "#000", marginTop: 30}}>Equipamentos para Devolver:</Text>
                 </View>
 
-                <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 30}}>
-                    <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>Em que dia fizeste a requisição:</Text>
-                </View>
-
-                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>             
-                    <TextInput 
-                        style={{backgroundColor: "#fff", marginTop: 10, fontSize: 10, width: 150, height: 35, fontWeight: "bold", borderRadius: 3}}
-                        placeholder="                   /                    /     "            
-                    />
-                    <TouchableOpacity>
-                        <Image source={calendar} style={{ width: 36, height: 38, marginLeft: 15}}/>
-                    </TouchableOpacity>
-                </View>
-
-                <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 30}}>                  
-                    <Text style={{ fontSize: 14, fontWeight: "bold", color: "#000"}}>Numero da Requisição:</Text>
-                    <TextInput 
-                        style={styles.input}       
+                <View style={{width: 350, height: 40, marginLeft: 10, marginTop: -10}}>
+                    <Dropdown
+                        label='Seleciona o Equipamento a devolver'
+                        selectedItemColor="#D63578"
+                        data={DropDownData.drop_down_data}
+                        onChangeText={(value, index, data) => setEquipamentoId(data[index].id)}
                     />
                 </View>
 
                 <View style={{flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 100}}>                    
                     <TouchableOpacity style={styles.button1} onPress={AlertSend}>
-                        <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 10}}>Enviar Pedido</Text>
+                        <Text style={{fontSize: 13, color: "#fff", textAlign: 'center', marginTop: 3}}>Enviar Pedido de Devolução</Text>
                     </TouchableOpacity>
                 </View>
 
