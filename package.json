@@ -34,7 +34,7 @@
     "react-native-table-component": "^1.2.1",
     "react-native-web": "~0.11.7",
     "react-navigation": "^4.3.7",
-    "sequelize": "^6.3.5",
+    "sequelize": "^6.29.0",
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
